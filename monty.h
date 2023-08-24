@@ -71,7 +71,7 @@ void stack_monty(stack_t **stack_ptr, unsigned int line_no);
 void queue_monty(stack_t **stack_ptr, unsigned int line_no);
 
 /* CUSTOM STANDARD LIBRARY FUNCTIONS */
-char **strtow(char *str, char *delims);
+char **strtow(char *string, char *delim);
 char *get_int(int n);
 
 /* ERROR MESSAGES & ERROR CODES */
@@ -94,9 +94,9 @@ void fill_numbase_buff(unsigned int num, unsigned int base,
 						char *buff, int buff_size);
 
 /* TOKENIZE STRINGS */
-int is_delim(char ch, char *delims);
-int get_word_length(char *str, char *delims);
-int get_word_count(char *str, char *delims);
-char *get_next_word(char *str, char *delims);
+int is_char_delim(char ch, char *delim);
+int get_word_length(char *string, char *delim);
+int get_word_count(char *string, char *delim);
+char *get_next_word(char *string, char *delim);
 
 #endif /* __MONTY_H__ */
