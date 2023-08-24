@@ -19,7 +19,7 @@ void push_monty(stack_t **stack_ptr, unsigned int line_no)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		set_op_token_error(malloc_error());
+		set_op_token_error(mallocError());
 		return;
 	}
 
@@ -92,7 +92,7 @@ void pint_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	if ((*stack_ptr)->next == NULL)
 	{
-		set_op_token_error(pint_error(line_no));
+		set_op_token_error(pintError(line_no));
 		return;
 	}
 
@@ -111,7 +111,7 @@ void pop_monty(stack_t **stack_ptr, unsigned int line_no)
 
 	if ((*stack_ptr)->next == NULL)
 	{
-		set_op_token_error(pop_error(line_no));
+		set_op_token_error(popError(line_no));
 		return;
 	}
 

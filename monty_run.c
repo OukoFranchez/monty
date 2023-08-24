@@ -134,7 +134,7 @@ int monty_run(FILE *script_fd)
 			if (is_empty_line(line, DELIMS))
 				continue;
 			freeStack(&stack_ptr);
-			return (malloc_error());
+			return (mallocError());
 		}
 
 		/* comment line */
@@ -169,7 +169,7 @@ int monty_run(FILE *script_fd)
 	if (line && *line == 0)
 	{
 		free(line);
-		return (malloc_error());
+		return (mallocError());
 	}
 
 	free(line);
