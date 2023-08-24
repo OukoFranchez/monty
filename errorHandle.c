@@ -52,7 +52,7 @@ int unknown_op_error(char *opcode, unsigned int line_number)
 }
 
 /**
- * no_int_error	- Print invalid monty_push arg error message
+ * no_int_error	- Print invalid push_monty arg error message
  * @line_number: Line number in bytecode where error happened
  *
  *Return: (EXIT_FAILURE)
