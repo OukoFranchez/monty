@@ -39,7 +39,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_no);
 } instruction_t;
 
 /* PRIMARY INTERPRETER FUNCTIONS */
@@ -78,13 +78,13 @@ char *get_int(int n);
 int usageError(void);
 int mallocError(void);
 int f_open_error(char *filename);
-int unknown_op_error(char *opcode, unsigned int line_number);
-int no_int_error(unsigned int line_number);
-int popError(unsigned int line_number);
-int pintError(unsigned int line_number);
-int short_stack_error(unsigned int line_number, char *op);
-int divError(unsigned int line_number);
-int pcharError(unsigned int line_number, char *message);
+int unknown_op_error(char *opcode, unsigned int line_no);
+int no_int_error(unsigned int line_no);
+int popError(unsigned int line_no);
+int pintError(unsigned int line_no);
+int short_stack_error(unsigned int line_no, char *op);
+int divError(unsigned int line_no);
+int pcharError(unsigned int line_no, char *message);
 
 /* INTEGER AND STRING MANIPULATION */
 char *getInt(int num);

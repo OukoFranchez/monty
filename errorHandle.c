@@ -40,26 +40,26 @@ int f_open_error(char *filename)
 /**
  * unknown_op_error - Prints unknown operation error message
  * @opcode: Opcode where error happened
- * @line_number: Line number in bytecode where error occured
+ * @line_no: Line number in bytecode where error occured
  *
  * Return: (EXIT_FAILURE)
  */
 
-int unknown_op_error(char *opcode, unsigned int line_number)
+int unknown_op_error(char *opcode, unsigned int line_no)
 {
-	fprintf(stderr, "L%u: Unknown Operation %s\n", line_number, opcode);
+	fprintf(stderr, "L%u: Unknown Operation %s\n", line_no, opcode);
 	return (EXIT_FAILURE);
 }
 
 /**
  * no_int_error	- Print invalid push_monty arg error message
- * @line_number: Line number in bytecode where error happened
+ * @line_no: Line number in bytecode where error happened
  *
  *Return: (EXIT_FAILURE)
  */
 
-int no_int_error(unsigned int line_number)
+int no_int_error(unsigned int line_no)
 {
-	fprintf(stderr, "L%u: usage: push integer\n", line_number);
+	fprintf(stderr, "L%u: usage: push integer\n", line_no);
 	return (EXIT_FAILURE);
 }
