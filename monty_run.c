@@ -122,7 +122,7 @@ int monty_run(FILE *script_fd)
 	unsigned int prev_tok_len = 0;
 	void (*op_func)(stack_t**, unsigned int);
 
-	if (init_stack(&stack_ptr) == EXIT_FAILURE)
+	if (initStack(&stack_ptr) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
 
 	while (getline(&line, &length, script_fd) != -1)
@@ -133,7 +133,7 @@ int monty_run(FILE *script_fd)
 		{
 			if (is_empty_line(line, DELIMS))
 				continue;
-			free_stack(&stack_ptr);
+			freeStack(&stack_ptr);
 			return (malloc_error());
 		}
 
@@ -146,7 +146,7 @@ int monty_run(FILE *script_fd)
 		op_func = get_op_func(op_toks[0]);
 		if (op_func == NULL)
 		{
-			free_stack(&stack_ptr);
+			freeStack(&stack_ptr);
 			exit_status = unknown_op_error(op_toks[0], line_no);
 			free_tokens();
 			break;
@@ -164,7 +164,7 @@ int monty_run(FILE *script_fd)
 		}
 		free_tokens();
 	}
-	free_stack(&stack_ptr);
+	freeStack(&stack_ptr);
 
 	if (line && *line == 0)
 	{

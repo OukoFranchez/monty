@@ -44,7 +44,7 @@ void push_monty(stack_t **stack_ptr, unsigned int line_no)
 	new->n = atoi(op_toks[1]);
 
 	/* STACK mode of inserting at the front */
-	if (check_mode(*stack_ptr) == STACK)
+	if (checkMode(*stack_ptr) == STACK)
 	{
 		temporary = (*stack_ptr)->next;
 		new->prev = *stack_ptr;
