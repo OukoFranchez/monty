@@ -49,7 +49,7 @@ int checkMode(stack_t *stack);
 void freeTokens(void);
 unsigned int token_arr_len(void);
 int monty_run(FILE *script_fd);
-void set_op_tok_error(int error_code);
+void set_op_token_error(int error_code);
 
 /* OPCODE FUNCTIONS */
 void push_monty(stack_t **stack_ptr, unsigned int line_no);

@@ -25,13 +25,13 @@ void pchar_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	if ((*stack_ptr)->next == NULL)
 	{
-		set_op_tok_error(pchar_error(line_no, "stack_ptr empty"));
+		set_op_token_error(pchar_error(line_no, "stack_ptr empty"));
 		return;
 	}
 
 	if ((*stack_ptr)->next->n < 0 || (*stack_ptr)->next->n > 127)
 	{
-		set_op_tok_error(pchar_error(line_no,
+		set_op_token_error(pchar_error(line_no,
 					     "value out of range"));
 		return;
 	}

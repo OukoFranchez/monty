@@ -18,7 +18,7 @@ void add_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	if ((*stack_ptr)->next == NULL || (*stack_ptr)->next->next == NULL)
 	{
-		set_op_tok_error(short_stack_error(line_no, "add"));
+		set_op_token_error(short_stack_error(line_no, "add"));
 		return;
 	}
 
@@ -40,7 +40,7 @@ void sub_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	if ((*stack_ptr)->next == NULL || (*stack_ptr)->next->next == NULL)
 	{
-		set_op_tok_error(short_stack_error(line_no, "sub"));
+		set_op_token_error(short_stack_error(line_no, "sub"));
 		return;
 	}
 
@@ -62,13 +62,13 @@ void div_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	if ((*stack_ptr)->next == NULL || (*stack_ptr)->next->next == NULL)
 	{
-		set_op_tok_error(short_stack_error(line_no, "div"));
+		set_op_token_error(short_stack_error(line_no, "div"));
 		return;
 	}
 
 	if ((*stack_ptr)->next->n == 0)
 	{
-		set_op_tok_error(div_error(line_no));
+		set_op_token_error(div_error(line_no));
 		return;
 	}
 
@@ -90,7 +90,7 @@ void mul_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	if ((*stack_ptr)->next == NULL || (*stack_ptr)->next->next == NULL)
 	{
-		set_op_tok_error(short_stack_error(line_no, "mul"));
+		set_op_token_error(short_stack_error(line_no, "mul"));
 		return;
 	}
 
@@ -112,13 +112,13 @@ void mod_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	if ((*stack_ptr)->next == NULL || (*stack_ptr)->next->next == NULL)
 	{
-		set_op_tok_error(short_stack_error(line_no, "mod"));
+		set_op_token_error(short_stack_error(line_no, "mod"));
 		return;
 	}
 
 	if ((*stack_ptr)->next->n == 0)
 	{
-		set_op_tok_error(div_error(line_no));
+		set_op_token_error(div_error(line_no));
 		return;
 	}
 
