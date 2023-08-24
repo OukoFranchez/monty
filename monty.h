@@ -48,30 +48,30 @@ int initStack(stack_t **stack);
 int checkMode(stack_t *stack);
 void freeTokens(void);
 unsigned int token_arr_len(void);
-int runMonty(FILE *script_fd);
-void set_op_tok_error(int error_code);
+int monty_run(FILE *script_fd);
+void set_op_token_error(int error_code);
 
 /* OPCODE FUNCTIONS */
-void monty_push(stack_t **stack_ptr, unsigned int line_no);
-void monty_pall(stack_t **stack_ptr, unsigned int line_no);
-void monty_pint(stack_t **stack_ptr, unsigned int line_no);
-void monty_pop(stack_t **stack_ptr, unsigned int line_no);
-void monty_swap(stack_t **stack_ptr, unsigned int line_no);
-void monty_add(stack_t **stack_ptr, unsigned int line_no);
+void push_monty(stack_t **stack_ptr, unsigned int line_no);
+void pall_monty(stack_t **stack_ptr, unsigned int line_no);
+void pint_monty(stack_t **stack_ptr, unsigned int line_no);
+void pop_monty(stack_t **stack_ptr, unsigned int line_no);
+void swap_monty(stack_t **stack_ptr, unsigned int line_no);
+void add_monty(stack_t **stack_ptr, unsigned int line_no);
 void monty_nop(stack_t **stack_ptr, unsigned int line_no);
-void monty_sub(stack_t **stack_ptr, unsigned int line_no);
-void monty_div(stack_t **stack_ptr, unsigned int line_no);
-void monty_mul(stack_t **stack_ptr, unsigned int line_no);
-void monty_mod(stack_t **stack_ptr, unsigned int line_no);
-void monty_pchar(stack_t **stack_ptr, unsigned int line_no);
-void monty_pstr(stack_t **stack_ptr, unsigned int line_no);
-void monty_rotl(stack_t **stack_ptr, unsigned int line_no);
-void monty_rotr(stack_t **stack_ptr, unsigned int line_no);
-void monty_stack(stack_t **stack_ptr, unsigned int line_no);
-void monty_queue(stack_t **stack_ptr, unsigned int line_no);
+void sub_monty(stack_t **stack_ptr, unsigned int line_no);
+void div_monty(stack_t **stack_ptr, unsigned int line_no);
+void mul_monty(stack_t **stack_ptr, unsigned int line_no);
+void mod_monty(stack_t **stack_ptr, unsigned int line_no);
+void pchar_monty(stack_t **stack_ptr, unsigned int line_no);
+void pstr_monty(stack_t **stack_ptr, unsigned int line_no);
+void rotl_monty(stack_t **stack_ptr, unsigned int line_no);
+void rotr_monty(stack_t **stack_ptr, unsigned int line_no);
+void stack_monty(stack_t **stack_ptr, unsigned int line_no);
+void queue_monty(stack_t **stack_ptr, unsigned int line_no);
 
 /* CUSTOM STANDARD LIBRARY FUNCTIONS */
-char **strtow(char *str, char *delims);
+char **strtow(char *string, char *delim);
 char *get_int(int n);
 
 /* ERROR MESSAGES & ERROR CODES */
@@ -94,9 +94,9 @@ void fill_numbase_buff(unsigned int num, unsigned int base,
 						char *buff, int buff_size);
 
 /* TOKENIZE STRINGS */
-int is_delim(char ch, char *delims);
-int get_word_length(char *str, char *delims);
-int get_word_count(char *str, char *delims);
-char *get_next_word(char *str, char *delims);
+int is_char_delim(char ch, char *delim);
+int get_word_length(char *string, char *delim);
+int get_word_count(char *string, char *delim);
+char *get_next_word(char *string, char *delim);
 
 #endif /* __MONTY_H__ */

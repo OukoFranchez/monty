@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * set_op_tok_error - sets last element of op_toks to be an error code
+ * set_op_token_error - sets last element of op_toks to be an error code
  * @error_code: Integer to store as a string in op_toks
  */
 
-void set_op_tok_error(int error_code)
+void set_op_token_error(int error_code)
 {
 	int toks_len = 0, i = 0;
 	char *exit_str = NULL;

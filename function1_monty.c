@@ -1,17 +1,17 @@
 #include "monty.h"
 
-void monty_push(stack_t **stack_ptr, unsigned int line_no);
-void monty_pall(stack_t **stack_ptr, unsigned int line_no);
-void monty_pint(stack_t **stack_ptr, unsigned int line_no);
-void monty_pop(stack_t **stack_ptr, unsigned int line_no);
-void monty_swap(stack_t **stack_ptr, unsigned int line_no);
+void push_monty(stack_t **stack_ptr, unsigned int line_no);
+void pall_monty(stack_t **stack_ptr, unsigned int line_no);
+void pint_monty(stack_t **stack_ptr, unsigned int line_no);
+void pop_monty(stack_t **stack_ptr, unsigned int line_no);
+void swap_monty(stack_t **stack_ptr, unsigned int line_no);
 
 /**
- * monty_push - Pushes value to stack_t linked list.
+ * push_monty - Pushes value to stack_t linked list.
  * @stack_ptr: pointer to top node of stack_t linked list.
  * @line_no: current working line no. of Monty bytecodes file.
  */
-void monty_push(stack_t **stack_ptr, unsigned int line_no)
+void push_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	stack_t *temporary, *new;
 	int i;
@@ -19,13 +19,13 @@ void monty_push(stack_t **stack_ptr, unsigned int line_no)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		set_op_tok_error(malloc_error());
+		set_op_token_error(malloc_error());
 		return;
 	}
 
 	if (op_toks[1] == NULL)
 	{
-		set_op_tok_error(no_int_error(line_no));
+		set_op_token_error(no_int_error(line_no));
 		return;
 	}
 
@@ -36,7 +36,7 @@ void monty_push(stack_t **stack_ptr, unsigned int line_no)
 
 		if (op_toks[1][i] < '0' || op_toks[1][i] > '9')
 		{
-			set_op_tok_error(no_int_error(line_no));
+			set_op_token_error(no_int_error(line_no));
 			return;
 		}
 	}
@@ -67,11 +67,11 @@ void monty_push(stack_t **stack_ptr, unsigned int line_no)
 }
 
 /**
- * monty_pall - Prints values of stack_t linked list.
+ * pall_monty - Prints values of stack_t linked list.
  * @stack_ptr: pointer to top mode node of stack_t linked list.
  * @line_no: current working line no. of Monty bytecodes file.
  */
-void monty_pall(stack_t **stack_ptr, unsigned int line_no)
+void pall_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	stack_t *temporary = (*stack_ptr)->next;
 
@@ -84,15 +84,15 @@ void monty_pall(stack_t **stack_ptr, unsigned int line_no)
 }
 
 /**
- * monty_pint - Prints top value of stack_t linked list.
+ * pint_monty - Prints top value of stack_t linked list.
  * @stack_ptr: pointer to top mode node of a stack_t linked list.
  * @line_no: current working line no. of Monty bytecodes file
  */
-void monty_pint(stack_t **stack_ptr, unsigned int line_no)
+void pint_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	if ((*stack_ptr)->next == NULL)
 	{
-		set_op_tok_error(pint_error(line_no));
+		set_op_token_error(pint_error(line_no));
 		return;
 	}
 
@@ -101,17 +101,17 @@ void monty_pint(stack_t **stack_ptr, unsigned int line_no)
 
 
 /**
- * monty_pop - Removes top value element of stack_t linked list.
+ * pop_monty - Removes top value element of stack_t linked list.
  * @stack_ptr: pointer to top mode node of a stack_t linked list.
  * @line_no: current working line no. of Monty bytecodes file
  */
-void monty_pop(stack_t **stack_ptr, unsigned int line_no)
+void pop_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	stack_t *next = NULL;
 
 	if ((*stack_ptr)->next == NULL)
 	{
-		set_op_tok_error(pop_error(line_no));
+		set_op_token_error(pop_error(line_no));
 		return;
 	}
 
@@ -123,17 +123,17 @@ void monty_pop(stack_t **stack_ptr, unsigned int line_no)
 }
 
 /**
- * monty_swap - Swaps top two value elements of stack_t linked list.
+ * swap_monty - Swaps top two value elements of stack_t linked list.
  * @stack_ptr: pointer to top mode node of a stack_t linked list.
  * @line_no: current working line no. of Monty bytecodes file
  */
-void monty_swap(stack_t **stack_ptr, unsigned int line_no)
+void swap_monty(stack_t **stack_ptr, unsigned int line_no)
 {
 	stack_t *temporary;
 
 	if ((*stack_ptr)->next == NULL || (*stack_ptr)->next->next == NULL)
 	{
-		set_op_tok_error(short_stack_error(line_no, "swap"));
+		set_op_token_error(short_stack_error(line_no, "swap"));
 		return;
 	}
 
