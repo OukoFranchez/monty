@@ -43,12 +43,12 @@ typedef struct instruction_s
 } instruction_t;
 
 /* PRIMARY INTERPRETER FUNCTIONS */
-void free_stack(stack_t **stack);
-int init_stack(stack_t **stack);
-int check_mode(stack_t *stack);
-void free_tokens(void);
+void freeStack(stack_t **stack);
+int initStack(stack_t **stack);
+int checkMode(stack_t *stack);
+void freeTokens(void);
 unsigned int token_arr_len(void);
-int run_monty(FILE *script_fd);
+int runMonty(FILE *script_fd);
 void set_op_tok_error(int error_code);
 
 /* OPCODE FUNCTIONS */
