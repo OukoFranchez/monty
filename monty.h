@@ -87,7 +87,7 @@ int divError(unsigned int line_number);
 int pcharError(unsigned int line_number, char *message);
 
 /* INTEGER AND STRING MANIPULATION */
-char *get_int(int num);
+char *getInt(int num);
 unsigned int _abs(int);
 int get_numbase_len(unsigned int num, unsigned int base);
 void fill_numbase_buff(unsigned int num, unsigned int base,
