@@ -80,10 +80,10 @@ int mallocError(void);
 int f_open_error(char *filename);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
-int pop_error(unsigned int line_number);
-int pint_error(unsigned int line_number);
+int popError(unsigned int line_number);
+int pintError(unsigned int line_number);
 int short_stack_error(unsigned int line_number, char *op);
-int div_error(unsigned int line_number);
-int pchar_error(unsigned int line_number, char *message);
+int divError(unsigned int line_number);
+int pcharError(unsigned int line_number, char *message);
 
 #endif /* __MONTY_H__ */
