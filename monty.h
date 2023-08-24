@@ -75,8 +75,8 @@ char **strtow(char *str, char *delims);
 char *get_int(int n);
 
 /* ERROR MESSAGES & ERROR CODES */
-int usage_error(void);
-int malloc_error(void);
+int usageError(void);
+int mallocError(void);
 int f_open_error(char *filename);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
