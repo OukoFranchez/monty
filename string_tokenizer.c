@@ -21,7 +21,6 @@ char **strtow(char *string, char *delim)
 	if (word_count == 0)
 		return (NULL);
 	words = malloc((word_count + 1) * sizeof(char *));
-
 	if (words == NULL)
 		return (NULL);
 	while (k < word_count)
