@@ -20,7 +20,6 @@ int main(int argc, char **argv)
 	int exit_code = EXIT_SUCCESS;
 
 	if (argc != 2)
-	{
 		return (usageError());
 		script_fd = fopen(argv[1], "r");
 		if (script_fd == NULL)
@@ -28,5 +27,4 @@ int main(int argc, char **argv)
 		exit_code = monty_run(script_fd);
 		fclose(script_fd);
 		return (exit_code);
-	}
 }
