@@ -23,7 +23,7 @@ void set_op_token_error(int error_code)
 		new_toks[i] = op_toks[i];
 		i++;
 	}
-	exit_str = get_int(error_code);
+	exit_str = getInt(error_code);
 	if (!exit_str)
 	{
 		free(new_toks);
