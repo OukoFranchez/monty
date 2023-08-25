@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 #include <stdlib.h>
 /**
  * strtow - separate string's words
@@ -42,8 +42,10 @@ char **strtow(char *string, char *delim)
 		}
 		n = 0;
 		while (n < word_length)
+		{
 			words[k][n] = *(string + n);
 			n++;
+		}
 		words[k][n] = '\0'; /* set end of string */
 		string = get_next_word(string, delim);
 		k++;
