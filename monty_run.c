@@ -170,7 +170,7 @@ int monty_run(FILE *script_fd)
 	if (line && *line == 0)
 	{
 		free(line);
-		return (malloc_error());
+		return (mallocError());
 	}
 
 	free(line);
