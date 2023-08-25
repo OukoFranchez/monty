@@ -50,7 +50,7 @@ int short_stack_error(unsigned int line_no, char *op)
 
 int divError(unsigned int line_no)
 {
-	fprintf(stderr, "L%u: Division by 0\n", line_no);
+	fprintf(stderr, "L%u: Division by zero\n", line_no);
 	return (EXIT_FAILURE);
 }
 
