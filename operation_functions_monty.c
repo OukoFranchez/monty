@@ -68,7 +68,7 @@ void div_monty(stack_t **stack_ptr, unsigned int line_no)
 
 	if ((*stack_ptr)->next->n == 0)
 	{
-		set_op_token_error(div_error(line_no));
+		set_op_token_error(divError(line_no));
 		return;
 	}
 
@@ -118,7 +118,7 @@ void mod_monty(stack_t **stack_ptr, unsigned int line_no)
 
 	if ((*stack_ptr)->next->n == 0)
 	{
-		set_op_token_error(div_error(line_no));
+		set_op_token_error(divError(line_no));
 		return;
 	}
 
